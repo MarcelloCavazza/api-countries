@@ -5,7 +5,6 @@ window.addEventListener('load', () => {
 async function doFetchAsync() {
     const res = await fetch('https://restcountries.com/v2/all');
     apiData = await res.json();
-    console.log(apiData[1])
     displayBefore.style.display = "none"
     displayAfter.style.display = ""
 
@@ -74,10 +73,10 @@ async function doFetchAsync() {
         } else if (clickedClassElement.includes('comeBackToList')) {
             setDisplayNone(clickedCountryDetails);
             setToDisplay(listOfContries);
-        } else if(clickedClassElement.includes('btnSendEmail')){
+        } else if (clickedClassElement.includes('btnSendEmail')) {
             let formToSentEmail = document.querySelector('#formSendEmail')
             setToDisplay(formToSentEmail);
-        } else if(clickedClassElement.includes('btnCloseforms')){
+        } else if (clickedClassElement.includes('btnCloseforms')) {
             element.preventDefault();
             let formToSentEmail = document.querySelector('#formSendEmail')
             setDisplayNone(formToSentEmail);
@@ -95,7 +94,7 @@ async function doFetchAsync() {
         btnRadios.forEach((element) => {
             element.checked == true ? element.checked = false : ''
         })
-        
+
         for (i = 0; i < apiData.length; i++) {
             let txtValue = apiData[i].translations.br;
             let population = apiData[i].population;
@@ -133,25 +132,25 @@ async function doFetchAsync() {
         popTotalDisplay.innerHTML = treatPopulation(populationCount)
     })
 
-    emailInput.addEventListener("keyup", ()=>{
+    emailInput.addEventListener("keyup", () => {
         let wroteEmail = emailInput.value;
         let emailErrorMsg = document.querySelector('#errorEmailMsg');
         btnEmailForm = document.querySelector('#btnSendEmail');
-        if(!(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.exec(wroteEmail))){
-            if(wroteEmail != ""){   
+        if (!(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.exec(wroteEmail))) {
+            if (wroteEmail != "") {
                 btnEmailForm.disabled = true
                 setToDisplay(emailErrorMsg)
-            }else{
+            } else {
                 setDisplayNone(emailErrorMsg)
                 btnEmailForm.disabled = false
             }
-        }else{
+        } else {
             setDisplayNone(emailErrorMsg)
             btnEmailForm.disabled = false
         }
     })
 
-    formElementToSendEmail.addEventListener("submit",(e) =>{
+    formElementToSendEmail.addEventListener("submit", (e) => {
         e.preventDefault()
         emailInput.value
         let content = createEmailContent(favCountry, nameInput.value)
