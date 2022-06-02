@@ -198,7 +198,6 @@ function getRegionValues(regionSelected) {
 }
 
 function showDetailsFromContry(id) {
-    displayToInputData.currennciesDisplay.innerHTML = ""
     listOfContries = document.querySelector("#countryList")
     setDisplayNone(listOfContries);
     clickedCountryDetails = document.querySelector("#countryDetail")
@@ -222,6 +221,7 @@ function instanceOfCountryDetails() {
 }
 
 function insertIntoDetailsContryLayout(id, displayToInputData) {
+    displayToInputData.currennciesDisplay.innerHTML = ""
     displayToInputData.flagDisplay.innerHTML = `<img id="flagDetailed" src="${apiData[id].flag}" alt="contryImg"/>`
     displayToInputData.nameDisplay.innerHTML = apiData[id].translations.br
     displayToInputData.nativeNameDisplay.innerHTML = apiData[id].nativeName
