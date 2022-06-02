@@ -198,6 +198,7 @@ function getRegionValues(regionSelected) {
 }
 
 function showDetailsFromContry(id) {
+    displayToInputData.currennciesDisplay.innerHTML = ""
     listOfContries = document.querySelector("#countryList")
     setDisplayNone(listOfContries);
     clickedCountryDetails = document.querySelector("#countryDetail")
