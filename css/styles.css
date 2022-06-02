@@ -1,0 +1,106 @@
+body {
+  padding: 10px;
+}
+
+img {
+  width: 20px !important;
+  height: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 100%;
+}
+
+#flagDetailed{
+  width: 50% !important;
+  height: 50%;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 50%;
+}
+
+.country-container {
+  display: flex;
+}
+
+.country {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.add {
+  border-radius: 50%;
+  background-color: darkgreen;
+  color: white;
+  font-weight: bold;
+}
+
+.country-list,
+.country-list-fav {
+  width: 50%;
+  padding: 5px;
+  border: 1px solid grey;
+  border-radius: 10px;
+  margin-right: 10px;
+  overflow-y: auto;
+  height: 70vh;
+}
+.paisList {
+  display: flex;
+  margin: 10px;
+  align-items: center;
+}
+
+div > h6 {
+  background-color: white;
+  padding: 10px;
+  padding-left: 0px;
+}
+
+#countryDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#flag{
+  display: flex;
+  justify-content: center;
+}
+
+.goToCountryDetails{
+  
+  padding-left: 5px;
+}
+
+#organizeListDetails{
+  display: flex;
+  flex-direction: column;
+}
+
+#headerBtns{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.btnSendEmail{
+  margin: 10px;
+}
+
+#detalhesEnviarEmail{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+  margin-bottom: 2px;
+}
+
+#formSendEmail{
+  border: solid 1px black;
+  padding: 10px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

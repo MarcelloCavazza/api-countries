@@ -1,0 +1,5 @@
+- enviar email com a lista de paises favoritos e com pontos turisticos
+
+- poder adicionar na lista de favs na tela detalhes do pais
+
+- no form de email vc pode remover paises favoritos que nao quiser

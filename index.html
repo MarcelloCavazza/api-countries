@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <title>Desafio FETCH/ASYNC</title>
+  </head>
+
+  <body>
+    <div id="countryList">
+      <h1>Desafio - Países</h1>
+      <span><i>Clique em cima do nome de um país para ter seus detalhes</i></span>
+      <div id="beforLoad">
+        <img src="./imgs/34338d26023e5515f6cc8969aa027bca.gif" alt="loading.gif"/>
+      </div>
+      <div id="afterLoad" style="display: none">
+        <input type="text" id="searchField" placeholder="Pesquise o país desejado"/><button class="waves-effect waves-light btn" id="clearSearchField">Limpar pesquisa</button>
+          <div id="headerBtns">
+            <label>
+              <input name="group1" type="radio" class="with-gap africaContinent Continents" id="africaContinent"/>
+              <span style="padding-left: 24px">Africa</span>
+            </label>
+            <label>
+              <input name="group1" type="radio" class="with-gap americaContinent Continents" id="americaContinent"/>
+              <span style="padding-left: 24px">Americas</span>
+            </label>
+            <label>
+              <input
+                name="group1" type="radio" class="with-gap asiaContinent Continents" id="asiaContinent"/>
+              <span style="padding-left: 24px">Asia</span>
+            </label>
+            <label>
+              <input name="group1" type="radio" class="with-gap europeContinent Continents" id="europeContinent"/>
+              <span style="padding-left: 24px">Europe</span>
+            </label>
+            <label>
+              <input name="group1" type="radio" class="with-gap oceaniaContinent Continents" id="oceaniaContinent"/>
+              <span style="padding-left: 24px">Oceania</span>
+            </label>
+          </div>
+      </div>
+      <div class="country-container">
+        <!-- Países lado esquerdo -->
+        <div class="country-list">
+          <h5>
+            Países (<span id="countCountries">0</span
+            ><span id="qttCountries" style="display: none">0</span>)
+          </h5>
+          <h6>
+            População total: <span id="totalPopulationList">0</span
+            ><span id="totalPopulationListTemp" style="display: none">0</span>
+            pessoas
+          </h6>
+          <div id="tabCountries"></div>
+        </div>
+
+        <!-- Países lado direito -->
+        <div class="country-list-fav">
+          <h5>Países Favoritos (<span id="favCountries">0</span>)</h5>
+          <h6>
+            População total:
+            <span id="totalPopulationFavorites">0</span> pessoas
+          </h6>
+          <div id="tabFavorites"></div>
+        </div>
+      </div>
+    </div>
+    <div id="countryDetail" style="display: none;">
+      <div id="organizeListDetails">
+        <div id="flag">
+
+        </div>
+        <div>
+          <section>
+            <b>Nome do país:</b>
+          </section>
+          <section id="name">
+          </section>
+        </div>
+        <div>
+          <section>
+            <b>Nome nativo do país: </b>
+          </section>
+          <section id="nativeName">
+          </section>
+        </div>
+        <div id="">
+          <section>
+            <b>Nome da capital:</b> 
+          </section>
+          <section id="capital">
+          </section>
+        </div>
+        <div id="">
+          <section>
+            <b>Nome da população: </b>
+          </section>
+          <section id="population">
+          </section>
+        </div>
+        <div id="">
+          <section>
+            <b>Nome do continente a qual pertece: </b>
+          </section>
+          <section id="region">
+          </section>
+        </div>
+        <div id="">
+          <section>
+            <b>Fuso horário: </b>
+          </section>
+          <section id="timezone">
+          </section>
+        </div>
+        <div id="">
+          <section>
+            <b>Nome da moeda local:</b>
+          </section>
+          <section id="currenncies">
+          </section>
+        </div>
+        <btn class="waves-effect waves-light btn comeBackToList">
+          Voltar
+        </btn>
+      </div>
+    </div>
+    <script src="./js/rootVariables.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/functions.js"></script>
+  </body>
+</html>
