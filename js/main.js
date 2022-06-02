@@ -118,6 +118,7 @@ async function doFetchAsync() {
     })
 
     btnClearSearchField.addEventListener("click", () => {
+        searchField.value = ""
         continentIsChecked.checked = false
         let populationCount = 0;
         for (i = 0; i < apiData.length; i++) {
