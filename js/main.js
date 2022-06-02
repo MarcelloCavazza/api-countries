@@ -134,29 +134,4 @@ async function doFetchAsync() {
         paisQtdDisplayDefaultElement.innerHTML = paisQtdDisplayDefault
         popTotalDisplay.innerHTML = treatPopulation(populationCount)
     })
-
-    emailInput.addEventListener("keyup", () => {
-        let wroteEmail = emailInput.value;
-        let emailErrorMsg = document.querySelector('#errorEmailMsg');
-        btnEmailForm = document.querySelector('#btnSendEmail');
-        if (!(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.exec(wroteEmail))) {
-            if (wroteEmail != "") {
-                btnEmailForm.disabled = true
-                setToDisplay(emailErrorMsg)
-            } else {
-                setDisplayNone(emailErrorMsg)
-                btnEmailForm.disabled = false
-            }
-        } else {
-            setDisplayNone(emailErrorMsg)
-            btnEmailForm.disabled = false
-        }
-    })
-
-    formElementToSendEmail.addEventListener("submit", (e) => {
-        e.preventDefault()
-        emailInput.value
-        let content = createEmailContent(favCountry, nameInput.value)
-        sendEmail(content)
-    })
 }
