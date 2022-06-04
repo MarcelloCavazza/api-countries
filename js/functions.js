@@ -226,7 +226,7 @@ function insertIntoDetailsContryLayout(id, displayToInputData) {
     displayToInputData.nameDisplay.innerHTML = apiData[id].name
     displayToInputData.nativeNameDisplay.innerHTML = apiData[id].nativeName
     displayToInputData.capitalDisplay.innerHTML = apiData[id].capital
-    displayToInputData.populationDisplay.innerHTML = apiData[id].population
+    displayToInputData.populationDisplay.innerHTML = treatPopulation(apiData[id].population)
     displayToInputData.regionDisplay.innerHTML = apiData[id].region
     displayToInputData.timezoneDisplay.innerHTML = apiData[id].timezones
     if (apiData[id].currencies) {
