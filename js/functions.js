@@ -239,6 +239,6 @@ function insertIntoDetailsContryLayout(id, displayToInputData) {
             }
         }
     } else {
-        displayToInputData.currennciesDisplay.innerHTML = "Esse país não possui uma moeda local!";
+        displayToInputData.currennciesDisplay.innerHTML = "This country doesn't has a currency!";
     }
 }
