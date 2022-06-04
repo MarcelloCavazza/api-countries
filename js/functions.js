@@ -232,11 +232,11 @@ function insertIntoDetailsContryLayout(id, displayToInputData) {
     if (apiData[id].currencies) {
         let coins = apiData[id].currencies.length
         for (i = 0; i < coins; i++) {
-            displayToInputData.currennciesDisplay.innerHTML += "Nome: " + apiData[id].currencies[i].name +
-                ";&nbsp; Símbolo: " + apiData[id].currencies[i].symbol + "&nbsp;;"
             if (coins > 1) {
                 displayToInputData.currennciesDisplay.innerHTML += "<br>";
             }
+            displayToInputData.currennciesDisplay.innerHTML += "Name: " + apiData[id].currencies[i].name +
+                ";&nbsp; Symbol: " + apiData[id].currencies[i].symbol + "&nbsp;;"
         }
     } else {
         displayToInputData.currennciesDisplay.innerHTML = "This country doesn't has a currency!";
