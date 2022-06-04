@@ -12,7 +12,7 @@ async function doFetchAsync() {
 
     paisQtdDisplayDefault = apiData.length;
     for (i = 0; i < paisQtdDisplayDefault; i++) {
-        createDefaultCountryTemplate(apiData[i].translations.br, treatPopulation(apiData[i].population, false), apiData[i].flag)
+        createDefaultCountryTemplate(apiData[i].name, treatPopulation(apiData[i].population, false), apiData[i].flag)
         populacaoTotalMundial += apiData[i].population
     }
 
@@ -96,7 +96,7 @@ async function doFetchAsync() {
         })
 
         for (i = 0; i < apiData.length; i++) {
-            let txtValue = apiData[i].translations.br;
+            let txtValue = apiData[i].name;
             let population = apiData[i].population;
             let canTheElementBeSearched = apiData[i].canBeSearched;
             let element = document.querySelector(`#pais${i}`)

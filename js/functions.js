@@ -26,18 +26,18 @@ function goBack(element) {
     hiddenElement.style.display = "flex";
 }
 
-function manageFavListIds(paisId, add = true){
-    let idTreated = paisId.replace("pais","")
-    if(add){
+function manageFavListIds(paisId, add = true) {
+    let idTreated = paisId.replace("pais", "")
+    if (add) {
         favCountry.push(idTreated)
-    }else{
+    } else {
         removeFromFavArray(idTreated)
     }
 }
 
-function removeFromFavArray(paisId){
+function removeFromFavArray(paisId) {
     let countryPos = favCountry.indexOf(paisId)
-    if(countryPos > -1){
+    if (countryPos > -1) {
         favCountry.splice(paisId, 1)
     }
 }
@@ -162,7 +162,7 @@ function searchByContinent(clickedContinent) {
             regionToSearch = "Oceania";
             break;
         default:
-            alert("filtro quebrou!")
+            alert("Something went wrong, contact me to fix it!")
             location.reload();
             break;
     }
@@ -223,22 +223,22 @@ function instanceOfCountryDetails() {
 function insertIntoDetailsContryLayout(id, displayToInputData) {
     displayToInputData.currennciesDisplay.innerHTML = ""
     displayToInputData.flagDisplay.innerHTML = `<img id="flagDetailed" src="${apiData[id].flag}" alt="contryImg"/>`
-    displayToInputData.nameDisplay.innerHTML = apiData[id].translations.br
+    displayToInputData.nameDisplay.innerHTML = apiData[id].name
     displayToInputData.nativeNameDisplay.innerHTML = apiData[id].nativeName
     displayToInputData.capitalDisplay.innerHTML = apiData[id].capital
     displayToInputData.populationDisplay.innerHTML = apiData[id].population
     displayToInputData.regionDisplay.innerHTML = apiData[id].region
     displayToInputData.timezoneDisplay.innerHTML = apiData[id].timezones
-    if(apiData[id].currencies){    
+    if (apiData[id].currencies) {
         let coins = apiData[id].currencies.length
-        for(i = 0; i < coins; i++){   
-            displayToInputData.currennciesDisplay.innerHTML += "Nome: "+apiData[id].currencies[i].name +
-                                                            ";&nbsp; Símbolo: " + apiData[id].currencies[i].symbol + "&nbsp;;"
-            if(coins > 1){
+        for (i = 0; i < coins; i++) {
+            displayToInputData.currennciesDisplay.innerHTML += "Nome: " + apiData[id].currencies[i].name +
+                ";&nbsp; Símbolo: " + apiData[id].currencies[i].symbol + "&nbsp;;"
+            if (coins > 1) {
                 displayToInputData.currennciesDisplay.innerHTML += "<br>";
             }
         }
-    }else{
+    } else {
         displayToInputData.currennciesDisplay.innerHTML = "Esse país não possui uma moeda local!";
     }
 }
